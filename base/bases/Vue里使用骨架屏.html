@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue里使用骨架屏 | 个人博客</title>
+    <meta name="description" content="李恒基的博客">
+    <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.b40796a8.css" as="style"><link rel="preload" href="/assets/js/app.c175ba18.js" as="script"><link rel="preload" href="/assets/js/11.cd9d233b.js" as="script"><link rel="prefetch" href="/assets/js/10.4dce6ca9.js"><link rel="prefetch" href="/assets/js/12.47ff96c3.js"><link rel="prefetch" href="/assets/js/13.afbe116e.js"><link rel="prefetch" href="/assets/js/14.f2aeddde.js"><link rel="prefetch" href="/assets/js/15.7896f5f2.js"><link rel="prefetch" href="/assets/js/16.06b74620.js"><link rel="prefetch" href="/assets/js/17.974a6ea4.js"><link rel="prefetch" href="/assets/js/18.562d3127.js"><link rel="prefetch" href="/assets/js/19.5f424ade.js"><link rel="prefetch" href="/assets/js/2.510c7132.js"><link rel="prefetch" href="/assets/js/20.c2c258dd.js"><link rel="prefetch" href="/assets/js/21.44ce249c.js"><link rel="prefetch" href="/assets/js/3.6def1008.js"><link rel="prefetch" href="/assets/js/4.ce4754ac.js"><link rel="prefetch" href="/assets/js/5.652d0dd4.js"><link rel="prefetch" href="/assets/js/6.05c1316c.js"><link rel="prefetch" href="/assets/js/7.1a8c3438.js"><link rel="prefetch" href="/assets/js/8.e160a24e.js"><link rel="prefetch" href="/assets/js/9.1c17a118.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b40796a8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">个人博客</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/algorithm/" class="nav-link">前端算法</a></div><div class="nav-item"><a href="/base/" class="nav-link router-link-active">基本知识</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">GitHub</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/OBKoro1" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/OBKoro1/Brush_algorithm" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  算法仓库
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/algorithm/" class="nav-link">前端算法</a></div><div class="nav-item"><a href="/base/" class="nav-link router-link-active">基本知识</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">GitHub</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/OBKoro1" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/OBKoro1/Brush_algorithm" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  算法仓库
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>基础</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/base/bases/Vue里使用骨架屏.html" class="active sidebar-link">Vue里使用骨架屏</a></li><li><a href="/base/bases/swiper.html" class="sidebar-link">vue里使用swiper</a></li><li><a href="/base/bases/api.html" class="sidebar-link">api</a></li><li><a href="/base/bases/music.html" class="sidebar-link">music</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="vue里使用骨架屏"><a href="#vue里使用骨架屏" aria-hidden="true" class="header-anchor">#</a> Vue里使用骨架屏</h1> <p>标签（空格分隔）： vue</p> <hr> <ol><li>创建一个vue项目</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>vue init webpack SkeletonScreen
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>进入项目</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>cd SkeletonScreen
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>运行项目</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm run dev
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="2"><li>查看项目的入口的index.html文件里面都写了些什么。</li></ol> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>utf-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>width=device-width,initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>screen<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+   <span class="token comment">&lt;!-- built files will be auto injected --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><ol start="3"><li>做个实验，将入口的index.html改为一下的代码，打开chrome的开发者工具，在Network里面找到throttle功能，调节网速为“Slow3G”，刷新页面，就能看到页面先是展示了三句“Helloskeleton”，待js加载完了才会替换为原本要展示的内容。这就是一个简单的</li></ol> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>utf-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>width=device-width,initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>screen<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Hello skeleton<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Hello skeleton<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Hello skeleton<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+   <span class="token comment">&lt;!-- built files will be auto injected --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><ol start="4"><li>骨架屏搭建
+显然，手动在div#app里面写入骨架屏内容是不科学的，我们需要一个扩展性强且自动化的易维护方案。既然是在Vue项目里，我们当然希望所谓的骨架屏也是一个.vue文件，它能够在构建时由工具自动注入到div#app里面。</li></ol> <p>首先：在/src目录下新建一个Skeleton.vue文件，其内容如下：</p> <div class="language-vue line-numbers-mode"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>skeleton page<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>skeleton-nav<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>skeleton-swiper<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>skeleton-tabs<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>i in 8<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>skeleton-tabs-item<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>skeleton-banner<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>i in 6<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>skeleton-productions<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector">.skeleton</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.skeleton-nav</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 45px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #eee<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.skeleton-swiper</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 160px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #eee<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.skeleton-tabs</span> <span class="token punctuation">{</span>
+  <span class="token property">list-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 -15px<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.skeleton-tabs-item</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 25%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 55px<span class="token punctuation">;</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.skeleton-tabs-item span</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 55px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 55px<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 55px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #eee<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.skeleton-banner</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #eee<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.skeleton-productions</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #eee<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br></div></div><p>接下来，在src新建一个skeleton.entry.js入口文件：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> Skeleton <span class="token keyword">from</span> <span class="token string">'./Skeleton.vue'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    Skeleton
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token string">'&lt;skeleton /&gt;'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>在根目录下新建一个webpack.skeleton.conf.js文件，以专门用来进行骨架屏的构建。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> nodeExternals <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-node-externals'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> VueSSRServerPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vue-server-renderer/server-plugin'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  target<span class="token punctuation">:</span> <span class="token string">'node'</span><span class="token punctuation">,</span>
+  entry<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    skeleton<span class="token punctuation">:</span> <span class="token string">'./src/skeleton.entry.js'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'./dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    publicPath<span class="token punctuation">:</span> <span class="token string">'/dist/'</span><span class="token punctuation">,</span>
+    filename<span class="token punctuation">:</span> <span class="token string">'[name].js'</span><span class="token punctuation">,</span>
+    libraryTarget<span class="token punctuation">:</span> <span class="token string">'commonjs2'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.css$/</span><span class="token punctuation">,</span>
+        use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token string">'vue-style-loader'</span><span class="token punctuation">,</span>
+          <span class="token string">'css-loader'</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.vue$/</span><span class="token punctuation">,</span>
+        loader<span class="token punctuation">:</span> <span class="token string">'vue-loader'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  externals<span class="token punctuation">:</span> <span class="token function">nodeExternals</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    whitelist<span class="token punctuation">:</span> <span class="token regex">/\.css$/</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    alias<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'vue$'</span><span class="token punctuation">:</span> <span class="token string">'vue/dist/vue.esm.js'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'*'</span><span class="token punctuation">,</span> <span class="token string">'.js'</span><span class="token punctuation">,</span> <span class="token string">'.vue'</span><span class="token punctuation">,</span> <span class="token string">'.json'</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token keyword">new</span> <span class="token class-name">VueSSRServerPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      filename<span class="token punctuation">:</span> <span class="token string">'skeleton.json'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br></div></div><p>此时运行</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>node_modules/.bin/webpack --config ./webpack.skeleton.conf.js
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>会报错，因为我们还需要安装另外的两个插件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm install webpack-node-externals --save
+npm install vue-server-renderer --save
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>此时运行</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>node_modules/.bin/webpack --config ./webpack.skeleton.conf.js
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>就能在根目录下生成个dist文件，并且里面还生成一个skeleton.json文件</p> <p>接下来，在根目录下新建一个skeleton.js，该文件即将被用于往index.html内插入骨架屏。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const fs = require('fs')
+const { resolve } = require('path')
+
+const createBundleRenderer = require('vue-server-renderer').createBundleRenderer
+
+// 读取`skeleton.json`，以`index.html`为模板写入内容
+const renderer = createBundleRenderer(resolve(__dirname, './dist/skeleton.json'), {
+  template: fs.readFileSync(resolve(__dirname, './index.html'), 'utf-8')
+})
+
+// 把上一步模板完成的内容写入（替换）`index.html`
+renderer.renderToString({}, (err, html) =&gt; {
+  fs.writeFileSync('./index.html', html, 'utf-8')
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>接下来还需要安装</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm install vue-template-compiler --save
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>注意</strong>，作为模板的html文件，需要在被写入内容的位置添加占位符，本例子在div#app里写入：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;div id=&quot;app&quot;&gt;
+ &lt;!--vue-ssr-outlet--&gt;
+&lt;/div&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>接下来，只要运行node skeleton.js，就可以完成骨架屏的注入了。index.html运行效果如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>node skeleton.js
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language-index.html line-numbers-mode"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0&quot;&gt;
+    &lt;title&gt;screen&lt;/title&gt;
+  &lt;style data-vue-ssr-id=&quot;cf7fd5a4:0&quot;&gt;
+.skeleton {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fff;
+}
+.skeleton-nav {
+  height: 45px;
+  background: #eee;
+  margin-bottom: 15px;
+}
+.skeleton-swiper {
+  height: 160px;
+  background: #eee;
+  margin-bottom: 15px;
+}
+.skeleton-tabs {
+  list-style: none;
+  padding: 0;
+  margin: 0 -15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.skeleton-tabs-item {
+  width: 25%;
+  height: 55px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.skeleton-tabs-item span {
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  border-radius: 55px;
+  background: #eee;
+}
+.skeleton-banner {
+  height: 60px;
+  background: #eee;
+  margin-bottom: 15px;
+}
+.skeleton-productions {
+  height: 20px;
+  margin-bottom: 15px;
+  background: #eee;
+}
+&lt;/style&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+      &lt;div data-server-rendered=&quot;true&quot; class=&quot;skeleton page&quot;&gt;&lt;div class=&quot;skeleton-nav&quot;&gt;&lt;/div&gt; &lt;div class=&quot;skeleton-swiper&quot;&gt;&lt;/div&gt; &lt;ul class=&quot;skeleton-tabs&quot;&gt;&lt;li class=&quot;skeleton-tabs-item&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li class=&quot;skeleton-tabs-item&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li class=&quot;skeleton-tabs-item&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li class=&quot;skeleton-tabs-item&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li class=&quot;skeleton-tabs-item&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li class=&quot;skeleton-tabs-item&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li class=&quot;skeleton-tabs-item&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li class=&quot;skeleton-tabs-item&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt; &lt;div class=&quot;skeleton-banner&quot;&gt;&lt;/div&gt; &lt;div class=&quot;skeleton-productions&quot;&gt;&lt;/div&gt;&lt;div class=&quot;skeleton-productions&quot;&gt;&lt;/div&gt;&lt;div class=&quot;skeleton-productions&quot;&gt;&lt;/div&gt;&lt;div class=&quot;skeleton-productions&quot;&gt;&lt;/div&gt;&lt;div class=&quot;skeleton-productions&quot;&gt;&lt;/div&gt;&lt;div class=&quot;skeleton-productions&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+     &lt;/div&gt;
+    &lt;!-- built files will be auto injected --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br></div></div><p>最后一步</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm run dev
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>运行我们的项目。此时可以看到骨架屏出现了。</p> <p>参考：
+https://segmentfault.com/a/1190000014832185
+https://blog.csdn.net/kxy17/article/details/82656517
+http://www.bestvist.com/p/50</p> <p>Good！！！</p></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/11.cd9d233b.js" defer></script><script src="/assets/js/app.c175ba18.js" defer></script>
+  </body>
+</html>
